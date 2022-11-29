@@ -1,0 +1,40 @@
+<div class="main-container">
+        <div class="left-container">
+            <img class="logo" src="../../../assets/logo.png" alt="">
+            <p>Online Book Shopping</p>
+        </div>
+        <div class="right-container">
+            <div class="login-head">
+                <div>
+                    <button routerLink="/login">LOGIN</button>
+                </div>
+                <div>
+                    <button style="color: #878787;" routerLink="/signup">SIGNUP</button>
+                </div>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-field">
+                    <div class="input-field">
+                        <label for="email" class="label">Email Id</label>
+                        <mat-form-field appearance="outline">  
+                            <mat-label>Email Id</mat-label>
+                            <input matInput placeholder="Email or phone" type="text" formControlName="email" class="form-control">
+                        </mat-form-field>
+                    </div>
+                    <div class="pass-field">
+                        <label for="password" class="label">Password</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Password" type="password" formControlName="password" class="form-control">
+                        </mat-form-field>
+                    </div>
+                    <div class="forget-pass">
+                        <h3><a class="link">Forget password</a></h3>
+                    </div>
+                    <div class="sign-field">
+                        <a class="button" (click)="onSubmit()">Login</a>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>

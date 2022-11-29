@@ -1,0 +1,52 @@
+<div class="main-container">
+    <div class="left-container">
+        <img class="logo" src="../../../assets/logo.png" alt="">
+        <p>Online Book Shopping</p>
+    </div>
+    <div class="right-container">
+        <div class="login-head">
+            <div>
+                <button style="color: #878787;" routerLink="/login">LOGIN</button>
+            </div>
+            <div>
+                <button routerLink="/signup">SIGNUP</button>
+            </div>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-field">
+                <div class="fname">
+                    <label for="FullName" class="label">Full Name</label>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input matInput placeholder="FullName" type="text" formControlName="fullName" class="form-control">
+                        <mat-error>Enter Full Name</mat-error>
+                      </mat-form-field>
+                  </div>
+                <div class="input-field">
+                    <label for="email" class="label">Email Id</label>
+                    <mat-form-field appearance="outline">  
+                        <mat-label>Email Id</mat-label>
+                        <input matInput placeholder="Email or phone" type="text" formControlName="email" class="form-control">
+                    </mat-form-field>
+                </div>
+                <div class="pass-field">
+                    <label for="password" class="label">Password</label>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" type="password" formControlName="password" class="form-control">
+                    </mat-form-field>
+                </div>
+                <div class="mo-field">
+                    <label for="mobile" class="label">Mobile Number</label>
+                    <mat-form-field appearance="outline">  
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput placeholder="Mobile number" type="text" formControlName="phone" class="form-control">
+                    </mat-form-field>
+                </div>
+                <div class="sign-field">
+                    <a class="button" (click)="onSubmit()">SignUp</a>
+                </div>
+            </div>
+        </form>
+</div>
+</div>
