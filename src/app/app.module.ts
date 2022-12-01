@@ -15,13 +15,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './Components/home/home.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { DiplayBooksComponent } from './Components/diplay-books/diplay-books.component'
+import { MatMenuModule } from '@angular/material/menu';
+import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component'
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    HomeComponent
+    HomeComponent,
+    DiplayBooksComponent,
+    GetAllBooksComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,9 @@ import { HomeComponent } from './Components/home/home.component';
     BrowserAnimationsModule,
     FormsModule,ReactiveFormsModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,MatTabsModule,
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
