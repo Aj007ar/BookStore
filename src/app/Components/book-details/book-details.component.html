@@ -1,0 +1,74 @@
+<div class="Container">
+    <div class="main">
+        <div class="header">
+            <p routerLink="/home/books" type="button">Home /</p>
+            <p>Book</p>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="img-field">
+            <div class="image">
+                <img src="../../../assets/Image 11.png" alt="">
+            </div>
+            <div class="buttons">
+                <!-- <div class="bag"> -->
+                <button class="btn">add to bag</button>
+                <!-- </div> -->
+                <div class="wishlst">
+                    <button class="btn">wishlist</button>
+                </div>
+            </div>
+        </div>
+        <div class="book-description">
+            <h2>{{Book.bookName}}</h2>
+            <p>by {{Book.author}}</p>
+            <div class="rating-container">
+                <div class="rating" fxLayout="row" fxLayoutAlign="center center">
+                    4 <mat-icon class="star" fxFlexAlign="center">star</mat-icon>
+                </div>
+                <div class="no-of-people-rated">
+                    (3)
+                </div>
+            </div>
+            <div class="price-container" fxLayout="row">
+                <div class="dicounted-price">
+                    <b>Rs. 1500</b>
+                </div>
+                <div class="actual-price">
+                    Rs. {{Book.price}}
+                </div>
+            </div>
+            <hr>
+            <div>
+                <ul>
+                    <li>
+                        Book Description
+                    </li>
+                </ul>
+                {{Book.description}}
+            </div>
+            <hr>
+            <div class="feedback">
+                <h2>Customer Feedback</h2>
+            </div>
+            <div class="feed">
+                <p>Overall Rating</p>
+                <div class="star">
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" />
+                        <label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" />
+                        <label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" />
+                        <label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" />
+                        <label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" />
+                        <label for="star1" title="text">1 star</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

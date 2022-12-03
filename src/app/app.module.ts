@@ -19,7 +19,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { DiplayBooksComponent } from './Components/diplay-books/diplay-books.component'
 import { MatMenuModule } from '@angular/material/menu';
 import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component'
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card';
+import { BookDetailsComponent } from './Components/book-details/book-details.component';
+import { HeaderComponent } from './Components/header/header.component';
+import { FooterComponent } from './Components/footer/footer.component'
+import { AuthguardService } from './Services/Auth-Guard/authguard.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { MatCardModule } from '@angular/material/card'
     RegistrationComponent,
     HomeComponent,
     DiplayBooksComponent,
-    GetAllBooksComponent
+    GetAllBooksComponent,
+    BookDetailsComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,7 @@ import { MatCardModule } from '@angular/material/card'
     MatMenuModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
