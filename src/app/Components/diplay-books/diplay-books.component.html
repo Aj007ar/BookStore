@@ -7,7 +7,7 @@
   </div>
 </div>
 <div class="all-books-container">
-  <div class="all-books" *ngFor="let Book of recieveBookList">
+  <div class="all-books" *ngFor="let Book of recieveBookList | filter : Search">
     <div class="book" (click)="onclick(Book)">
       <div class="book-image">
         <img src="../../../assets/Image 11.png" alt="">

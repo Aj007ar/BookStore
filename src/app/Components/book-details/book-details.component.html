@@ -12,10 +12,10 @@
             </div>
             <div class="buttons">
                 <!-- <div class="bag"> -->
-                <button class="btn">add to bag</button>
+                <button class="btn" (click)="cart()">add to bag</button>
                 <!-- </div> -->
                 <div class="wishlst">
-                    <button class="btn">wishlist</button>
+                    <button class="btn" (click)="wish()">wishlist</button>
                 </div>
             </div>
         </div>
@@ -67,6 +67,11 @@
                         <label for="star1" title="text">1 star</label>
                     </div>
                 </div>
+                <textarea matInput class="searchInput" type="text" placeholder="write a review"
+                        style="width: 570px;height: 70px;" name="comment" #box></textarea>
+                        <div fxLayoutAlign="end center">
+                            <button class="btn">Submit</button>
+                        </div>
             </div>
         </div>
     </div>

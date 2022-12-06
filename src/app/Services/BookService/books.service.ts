@@ -6,15 +6,58 @@ import { HttpService } from '../HttpService/http.service';
   providedIn: 'root'
 })
 export class BooksService {
+  token: any;
+  accessToken: any;
 
   constructor(private httpService:HttpService) {
+    this.token=localStorage.getItem('token')
    }
   getAllBook(){
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        'x-access-token': this.token
       })
     }
-    return this.httpService.getService("/bookstore_user/get/book", header)
+    return this.httpService.getService("/bookstore_user/get/book",true, header)
+  }
+  addCart(Book:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService("/bookstore_user/add_cart_item/"+Book.product_id, Book, true, header)
+  }
+  addWish(Book:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService("/bookstore_user/add_wish_list/"+Book.product_id, Book, true, header)
+  }
+  getCartBook(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.getService("/bookstore_user/get_cart_items",true, header)
+  }
+  removeItem(Book:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.deleteService("/bookstore_user/remove_cart_item/"+Book.cartItem_id, true, header)
   }
 }

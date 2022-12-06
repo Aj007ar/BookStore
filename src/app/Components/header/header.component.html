@@ -9,7 +9,7 @@
         </div>
         <div class="srch">
             <input class="search-field" type="text" aria-label="search" placeholder="Search" autocomplete="off"
-                role="combobox" aria-hidden="false">
+                role="combobox" aria-hidden="false" (keyup)="searchBook($event)">
         </div>
     </div>
     <span class="example-spacer"></span>
@@ -20,15 +20,24 @@
         <label>Profile</label>
     </button>
     <mat-menu #menu="matMenu" class="menu-field">
-        <div fxLayout="row wrap" style="padding-left: 8px;" fxLayout="row" fxLayoutAlign="none" class="bg">
+        <div class="bg">
             <div>
                 <h4>Welcome</h4>
                 <p>To acsess account and manage orders</p>
                 <button class="login-btn" (click)="Logout()">Logout</button>
+                <hr>
+                <div class="order">
+                    <img src="../../../assets/markunread-mailbox.svg" alt="">
+                    <p>My Order</p>
+                </div>
+                <div class="order">
+                    <img src="../../../assets/like.svg" alt="">
+                    <p>Wishlist</p>
+                </div>
             </div>
         </div>
     </mat-menu>
-    <button mat-icon-button class="cart" aria-label="Example icon-button with share icon">
+    <button mat-icon-button class="cart" aria-label="Example icon-button with share icon" (click)="cart()">
         <mat-icon>
             <img src="../../../assets/shopping_cart_white_24dp.svg" alt="">
         </mat-icon>

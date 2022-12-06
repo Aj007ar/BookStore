@@ -18,10 +18,16 @@ export class DiplayBooksComponent implements OnInit {
   quantity:any
   price: any;
   id: any;
+  Search='';
   constructor(private router:Router,private book:BooksService,private dataService:DataService) { }
 
   ngOnInit(): void {
+    this.dataService.getBookDetails.subscribe((res:any)=>{
+      console.log(res)
+      this.Search=res;
+    })
     console.log(this.recieveBookList)
+    
   }
   toBookDetails(id: any) {
     this.id = id;

@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
+import { MatExpansionModule } from '@angular/material/expansion'
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -24,6 +25,9 @@ import { BookDetailsComponent } from './Components/book-details/book-details.com
 import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component'
 import { AuthguardService } from './Services/Auth-Guard/authguard.service';
+import { CartComponent } from './Components/cart/cart.component';
+import { GetAllcartComponent } from './Components/get-allcart/get-allcart.component';
+import { FilterPipe } from './Pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,10 @@ import { AuthguardService } from './Services/Auth-Guard/authguard.service';
     GetAllBooksComponent,
     BookDetailsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent,
+    GetAllcartComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,8 @@ import { AuthguardService } from './Services/Auth-Guard/authguard.service';
     HttpClientModule,
     MatToolbarModule,MatTabsModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

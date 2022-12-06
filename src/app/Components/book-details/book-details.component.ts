@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BooksService } from 'src/app/Services/BookService/books.service';
 import { DataService } from 'src/app/Services/DataService/data.service';
 
@@ -17,19 +18,32 @@ export class BookDetailsComponent implements OnInit {
   author: any;
   quantity:any
   price: any;
+  _id:any;
  
-  constructor( private book:BooksService,private dataService:DataService) { }
+  constructor( private book:BooksService,private dataService:DataService,private router:Router) { }
 
   ngOnInit(): void {
     this.dataService.getBookDetails.subscribe((response:any)=>{
       this.Book = response;
     })
   }
-  // getAllBook(){
-  //   this.book.getAllBook().subscribe((res:any)=>{
-  //     console.log(res);
-  //     this.BookList=res.result;
-  //     console.log(this.BookList);
-  //     })
-  // }
+  cart(){
+    let Book={
+      product_id: this.Book._id,
+    }
+    console.log(Book)
+    this.book.addCart(Book).subscribe((res:any)=>{
+      console.log(res)
+      this.router.navigateByUrl('/home/mycart') 
+    })
+  }
+  wish(){
+    let Book={
+      product_id: this.Book._id,
+    }
+    console.log(Book)
+    this.book.addWish(Book).subscribe((res:any)=>{
+      console.log(res)
+    })
+  }
 }
