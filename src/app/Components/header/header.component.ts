@@ -26,4 +26,8 @@ export class HeaderComponent implements OnInit {
   searchBook(event:any){
     this.dataService.SendBookDetails(event.target.value)
   }
+  wish()
+  {
+    this.router.navigateByUrl("/home/wishlist")
+  }
 }

@@ -17,9 +17,10 @@ export class HttpService {
   getService(url: string,token: boolean = true, httpOptions: any) {
     return this.httpclient.get(this.baseUrl+url,token && httpOptions)
   }
-  putService(){
+  putService(url: string, reqData: any, token: boolean = true, httpOptions: any) {
+    return this.httpclient.put(this.baseUrl+url,reqData,token && httpOptions)
   }
-  deleteService(url: string, token: boolean = false, httpOptions: any) {
+  deleteService(url: string, token: boolean = true, httpOptions: any) {
     return this.httpclient.delete(this.baseUrl+url,token && httpOptions)
   }
   patchService() {

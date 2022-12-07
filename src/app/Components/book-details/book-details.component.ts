@@ -44,6 +44,7 @@ export class BookDetailsComponent implements OnInit {
     console.log(Book)
     this.book.addWish(Book).subscribe((res:any)=>{
       console.log(res)
+      this.router.navigateByUrl('/home/wishlist')
     })
   }
 }

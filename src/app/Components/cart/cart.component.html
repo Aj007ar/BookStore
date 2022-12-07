@@ -16,24 +16,24 @@
                 <p>by {{Book.product_id.author}}</p>
                 <div class="price-container" fxLayout="row">
                     <div class="dicounted-price">
-                        <b>Rs. 1500</b>
+                        <b>Rs. {{Book.product_id.discountPrice}} </b>
                     </div>
                     <div class="actual-price">
                         Rs. {{Book.product_id.price}}
                     </div>
                 </div>
                 <div class="quantity">
-                    <div class="decreaseQty">
+                    <div class="decreaseQty" (click)="addItem()">
                         <img src="../../../assets/negative.svg" alt=" ">
                     </div>
                     <div class="one">
-                        1
+                        {{Book.product_id.quantity}}
                     </div>
-                    <div class="IncreaseQty">
+                    <div class="IncreaseQty" (click)="addItem()">
                         <img src="../../../assets/positive.svg" alt=" ">
                     </div>
                     <div class="btn">
-                        <button mat-button (click)="deleteItem()">
+                        <button mat-button (click)="deleteItem(Book._id)">
                             Remove
                         </button>
                     </div>
@@ -46,7 +46,24 @@
         </div>
     </div>
     <div class="address">
-
+        <div>
+            <h2>Customer Details</h2>
+        </div>
+        <form>
+            <div class="cust-container">
+              <mat-form-field class="cust-field" appearance="outline">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Enter Full name" type="text" formControlName="fname" class="form-control">
+              </mat-form-field>
+              <mat-form-field class="cust-field" appearance="outline">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput placeholder="Enter Mobile Number" type="text" formControlName="MoNum" class="form-control">
+              </mat-form-field>
+            </div>
+            <div>
+                <h2>1.WORK</h2>
+            </div>
+          </form>
     </div>
     <div class="summary">
 

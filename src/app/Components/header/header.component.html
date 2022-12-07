@@ -1,5 +1,5 @@
 <mat-toolbar class="header">
-    <div class="logo">
+    <div class="logo" routerLink="/home/books">
         <img src="../../../assets/education (1).svg" alt="">
         <p>Bookstore</p>
     </div>
@@ -30,7 +30,7 @@
                     <img src="../../../assets/markunread-mailbox.svg" alt="">
                     <p>My Order</p>
                 </div>
-                <div class="order">
+                <div class="order" (click)="wish()">
                     <img src="../../../assets/like.svg" alt="">
                     <p>Wishlist</p>
                 </div>

@@ -4,6 +4,7 @@ import { BookDetailsComponent } from './Components/book-details/book-details.com
 import { CartComponent } from './Components/cart/cart.component';
 import { DiplayBooksComponent } from './Components/diplay-books/diplay-books.component';
 import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
+import { GetAllWishComponent } from './Components/get-all-wish/get-all-wish.component';
 import { GetAllcartComponent } from './Components/get-allcart/get-allcart.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   children:[
   {path: 'books', component:GetAllBooksComponent},
   {path: 'book-details', component:BookDetailsComponent},
-  {path: 'mycart', component:GetAllcartComponent}
+  {path: 'mycart', component:GetAllcartComponent},
+  {path: 'wishlist', component:GetAllWishComponent}
   ]},
 ];
 

@@ -28,6 +28,8 @@ import { AuthguardService } from './Services/Auth-Guard/authguard.service';
 import { CartComponent } from './Components/cart/cart.component';
 import { GetAllcartComponent } from './Components/get-allcart/get-allcart.component';
 import { FilterPipe } from './Pipe/filter.pipe';
+import { GetAllWishComponent } from './Components/get-all-wish/get-all-wish.component';
+import { WishListComponent } from './Components/wish-list/wish-list.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { FilterPipe } from './Pipe/filter.pipe';
     FooterComponent,
     CartComponent,
     GetAllcartComponent,
-    FilterPipe
+    FilterPipe,
+    GetAllWishComponent,
+    WishListComponent
   ],
   imports: [
     BrowserModule,

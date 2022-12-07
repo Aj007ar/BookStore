@@ -20,12 +20,19 @@
     height: auto;
     margin-left: 266px;
     margin-right: 266px;
+
+    h3 {
+        padding: 0px;
+        padding-top: 13px;
+        margin-bottom: -6px;
+        padding-left: 15px;
+    }
 }
 
 .address {
     border-color: black;
     border: groove;
-    height: 189px;
+    height: auto;
     margin-left: 266px;
     margin-right: 266px;
     margin-top: 20px;

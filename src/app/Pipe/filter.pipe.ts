@@ -12,8 +12,8 @@ export class FilterPipe implements PipeTransform {
     }else{
       args=args.toLowerCase();
     }
-    return value.filter((note:any)=>{
-      return note.bookName.toLowerCase().includes(args);
+    return value.filter((book:any)=>{
+      return book.bookName.toLowerCase().includes(args);
     })
   }
 

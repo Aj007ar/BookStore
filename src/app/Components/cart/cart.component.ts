@@ -24,14 +24,34 @@ export class CartComponent implements OnInit {
   constructor(private dataService:DataService,private book:BooksService) { }
 
   ngOnInit(): void {
-    console.log(this.recieveBookList)
+    this.dataService.getBookDetails.subscribe((response:any)=>{
+      this.Book = response;
+    })
+    // console.log(this.recieveBookList)
   }
-  deleteItem(){
-    let Book={
-      cartItem_id: this.Book._id,
-    }
+  deleteItem(Book:any){
+
     console.log(Book)
     this.book.removeItem(Book).subscribe((res:any)=>{
+      console.log(res)
+    })
+  }
+  // del(bookId:any){
+  //   let Book={
+  //     product_id: this.Book._id,
+  //   }
+  //   console.log(bookId)
+  //   this.book.rem(Book,bookId).subscribe((res:any)=>{
+  //     console.log(res)
+  //   })
+  // }
+
+  addItem(){
+    let count={
+      quantity:1
+    }
+    console.log(count)
+    this.book.quantity(this.Book._id,count).subscribe((res:any)=>{
       console.log(res)
     })
   }
