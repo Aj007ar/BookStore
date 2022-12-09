@@ -5,7 +5,7 @@
     </div>
     <div class="search-container">
         <div class="s-btn" type="button">
-            <img src="../../../assets/search-1300-439394.png">
+            <img src="../../../assets/search.svg">
         </div>
         <div class="srch">
             <input class="search-field" type="text" aria-label="search" placeholder="Search" autocomplete="off"
@@ -37,7 +37,7 @@
             </div>
         </div>
     </mat-menu>
-    <button mat-icon-button class="cart" aria-label="Example icon-button with share icon" (click)="cart()">
+    <button mat-icon-button class="cart" [matBadge]="content" matBadgeColor="warn" (click)="cart()">
         <mat-icon>
             <img src="../../../assets/shopping_cart_white_24dp.svg" alt="">
         </mat-icon>

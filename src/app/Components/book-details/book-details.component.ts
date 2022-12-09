@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { BooksService } from 'src/app/Services/BookService/books.service';
 import { DataService } from 'src/app/Services/DataService/data.service';
@@ -10,6 +10,7 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 })
 export class BookDetailsComponent implements OnInit {
   @Input() recieveBookList: any;
+  @Output() RefreshEvent = new EventEmitter<string>();
   BookList=[]
   Book:any
   description: any;
@@ -34,7 +35,7 @@ export class BookDetailsComponent implements OnInit {
     console.log(Book)
     this.book.addCart(Book).subscribe((res:any)=>{
       console.log(res)
-      this.router.navigateByUrl('/home/mycart') 
+      this.RefreshEvent.emit(res)
     })
   }
   wish(){
@@ -44,7 +45,7 @@ export class BookDetailsComponent implements OnInit {
     console.log(Book)
     this.book.addWish(Book).subscribe((res:any)=>{
       console.log(res)
-      this.router.navigateByUrl('/home/wishlist')
+      this.RefreshEvent.emit(res)
     })
   }
 }

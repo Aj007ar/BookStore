@@ -9,8 +9,11 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router:Router,private dataService:DataService) { }
-
+  content:any;
+  constructor(private router:Router,private dataService:DataService) { 
+    this.content=localStorage.getItem('badgeCount')
+  }
+  
   ngOnInit(): void {
   }
   Logout()

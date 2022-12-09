@@ -9,6 +9,7 @@ import { BooksService } from 'src/app/Services/BookService/books.service';
 export class GetAllBooksComponent implements OnInit {
   @Input() recieveBookList: any;
 
+
   description: any;
   discountPrice: any;
   bookName: any;

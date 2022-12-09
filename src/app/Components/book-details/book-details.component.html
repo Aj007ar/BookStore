@@ -8,7 +8,7 @@
     <div class="main-container">
         <div class="img-field">
             <div class="image">
-                <img src="../../../assets/Image 11.png" alt="">
+                <img src="../../../assets/image 36.png" alt="">
             </div>
             <div class="buttons">
                 <!-- <div class="bag"> -->
@@ -32,10 +32,10 @@
             </div>
             <div class="price-container" fxLayout="row">
                 <div class="dicounted-price">
-                    <b>Rs. 1500</b>
+                    <b>Rs. {{Book.product_id.discountPrice}}</b>
                 </div>
                 <div class="actual-price">
-                    Rs. {{Book.price}}
+                    Rs. {{Book.product_id.price}}
                 </div>
             </div>
             <hr>

@@ -6,10 +6,10 @@
         </div>
     </div>
     <div class="cart_container">
-        <h3>My Cart({{recieveBookList.length}})</h3>
+        <h2>My Cart({{recieveBookList.length}})</h2>
         <div class="crt" *ngFor="let Book of recieveBookList">
             <div class="image">
-                <img src="../../../assets/Image 11.png" alt="">
+                <img src="../../../assets/image 36.png" alt="">
             </div>
             <div class="book-description">
                 <h2>{{Book.product_id.bookName}}</h2>
@@ -27,7 +27,7 @@
                         <img src="../../../assets/negative.svg" alt=" ">
                     </div>
                     <div class="one">
-                        {{Book.product_id.quantity}}
+                        1
                     </div>
                     <div class="IncreaseQty" (click)="addItem()">
                         <img src="../../../assets/positive.svg" alt=" ">
@@ -38,35 +38,120 @@
                         </button>
                     </div>
                 </div>
-                
+
             </div>
         </div>
-        <div>
-            <a class="order">PLACE ORDER</a>
+        <div *ngIf="placeorder">
+            <a class="order" (click)="addressBar()">PLACE ORDER</a>
         </div>
     </div>
-    <div class="address">
-        <div>
-            <h2>Customer Details</h2>
+    <div class="address" *ngFor="let Book of recieveBookList">
+        <div *ngIf="address">
+            <h2>Address Details</h2>
         </div>
-        <form>
-            <div class="cust-container">
-              <mat-form-field class="cust-field" appearance="outline">
-                <mat-label>Full Name</mat-label>
-                <input matInput placeholder="Enter Full name" type="text" formControlName="fname" class="form-control">
-              </mat-form-field>
-              <mat-form-field class="cust-field" appearance="outline">
-                <mat-label>Mobile Number</mat-label>
-                <input matInput placeholder="Enter Mobile Number" type="text" formControlName="MoNum" class="form-control">
-              </mat-form-field>
+        <!-- <form *ngIf="!address"> -->
+        <div *ngIf="!address">
+            <div>
+                <div>
+                    <h2>Customer Details</h2>
+                </div>
+                <div class="cust-container">
+                    <div class="fname">
+                        <div>
+                            <label for="fname" class="label">Full Name</label>
+                        </div>
+                        <div>
+                            <p>{{Book.user_id.fullName}}</p>
+                            <!-- <mat-form-field class="cust-field" appearance="outline">
+                                <input matInput placeholder="Enter Full name" type="text" formControlName="fullName"
+                                    class="form-control">
+                                    
+                            </mat-form-field> -->
+                        </div>
+                    </div>
+                    <div class="fname">
+                        <div>
+                            <label for="MoNum" class="label">Mobile Number</label>
+                        </div>
+                        <p>{{Book.user_id.phone}}</p>
+                        <!-- <div>
+                            <mat-form-field class="cust-field" appearance="outline">
+                                <input matInput placeholder="Enter Mobile Number" type="text" formControlName="phone"
+                                    class="form-control">
+                            </mat-form-field> -->
+                    </div>
+                </div>
             </div>
             <div>
-                <h2>1.WORK</h2>
+                <h4>Address</h4>
+                <div class="fad">
+                    <p>{{Book.user_id.address.fullAddress}}</p>
+                    <!-- <mat-form-field appearance="outline">
+                            <input matInput placeholder="" formControlName="fullAddress">
+                        </mat-form-field> -->
+                </div>
             </div>
-          </form>
+            <div class="cust-container">
+                <div class="fname">
+                    <div>
+                        <label for="MoNum" class="label">City/Town</label>
+                    </div>
+                    <div>
+                        <!-- <p>{{Book.user_id.fullName}}</p> -->
+                        <!-- <mat-form-field class="cust-field" appearance="outline">
+                                <input matInput placeholder="Enter City/Town" type="text" formControlName="city"
+                                    class="form-control">
+                            </mat-form-field> -->
+                    </div>
+                </div>
+                <div class="fname">
+                    <div>
+                        <label for="MoNum" class="label">State</label>
+                    </div>
+                    <div>
+                        <!-- <p>{{Book.user_id.fullName}}</p> -->
+                        <!-- <mat-form-field class="cust-field" appearance="outline">
+                                <input matInput placeholder="Enter State" type="text" formControlName="state"
+                                    class="form-control">
+                            </mat-form-field> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cont">
+            <a class="order" (click)="continueBar()">Continue</a>
+        </div>
     </div>
-    <div class="summary">
-
-    </div>
+    <!-- </form> -->
 
 </div>
+<div class="summary">
+    <div *ngIf="summary">
+        <h2>Order Summary</h2>
+    </div>
+    <div *ngIf="!summary">
+        <h2>Order Summary</h2>
+        <div class="crt" *ngFor="let Book of recieveBookList">
+            <div class="image">
+                <img src="../../../assets/image 36.png" alt="">
+            </div>
+            <div class="book-description">
+                <h2>{{Book.product_id.bookName}}</h2>
+                <p>by {{Book.product_id.author}}</p>
+                <div class="price-container" fxLayout="row">
+                    <div class="dicounted-price">
+                        <b>Rs. {{Book.product_id.discountPrice}} </b>
+                    </div>
+                    <div class="actual-price">
+                        Rs. {{Book.product_id.price}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a class="order">Checkout</a>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -4,7 +4,9 @@
   
   .header {
     background-color: #A03037;
-  }
+    // position: fixed;
+    // margin-top: -20px;
+  
   
   .logo {
     display: flex;
@@ -48,10 +50,8 @@
   }
   
   .s-btn img {
-    border: none;
-    background: transparent;
-    height: 100%;
-    margin-bottom: -20px;
+    height: 28px;
+    margin-bottom: -12px;
   }
   
   .footer {
@@ -70,7 +70,7 @@
   .profile {
     display: flex;
     flex-direction: column;
-    margin: 27px;
+    margin: 60px;
     background: transparent;
     border: none;
     color: white;
@@ -88,7 +88,7 @@
     margin: 1px;
     background: transparent;
     border: none;
-    margin-right: 15px;
+    margin-right: 100px;
   }
   
   .cart label {
@@ -132,3 +132,4 @@
     font-size: 12px;
     margin-top: -2px;
 }
+  }

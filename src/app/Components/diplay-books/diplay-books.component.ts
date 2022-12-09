@@ -21,10 +21,15 @@ export class DiplayBooksComponent implements OnInit {
   Search='';
   constructor(private router:Router,private book:BooksService,private dataService:DataService) { }
 
+  totalLength:any;
+  page:number=1;
+
   ngOnInit(): void {
     this.dataService.getBookDetails.subscribe((res:any)=>{
       console.log(res)
       this.Search=res;
+      // this.totalLength=res.result.length;
+      
     })
     console.log(this.recieveBookList)
     

@@ -30,6 +30,7 @@ export class GetAllcartComponent implements OnInit {
       console.log(res);
       this.BookList=res.result;
       console.log(this.BookList);
+      localStorage.setItem('badgeCount',res.result.length)
       })
   }
 

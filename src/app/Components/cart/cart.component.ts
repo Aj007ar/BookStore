@@ -19,10 +19,15 @@ export class CartComponent implements OnInit {
   price: any;
   _id:any;
   length:any;
+  fullName:any
   isShow= false;
+  address= true;
+  placeorder= true;
+  cont=true;
+  summary=true;
 
   constructor(private dataService:DataService,private book:BooksService) { }
-
+  
   ngOnInit(): void {
     this.dataService.getBookDetails.subscribe((response:any)=>{
       this.Book = response;
@@ -36,15 +41,7 @@ export class CartComponent implements OnInit {
       console.log(res)
     })
   }
-  // del(bookId:any){
-  //   let Book={
-  //     product_id: this.Book._id,
-  //   }
-  //   console.log(bookId)
-  //   this.book.rem(Book,bookId).subscribe((res:any)=>{
-  //     console.log(res)
-  //   })
-  // }
+
 
   addItem(){
     let count={
@@ -55,7 +52,12 @@ export class CartComponent implements OnInit {
       console.log(res)
     })
   }
-  Show() {
-    this.isShow = true;
+  addressBar() {
+    this.address = false
+    this.placeorder = false
+  }
+  continueBar() {
+    this.summary = false
+    this.cont = false
   }
 }

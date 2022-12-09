@@ -5,7 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
-import { MatExpansionModule } from '@angular/material/expansion'
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatBadgeModule } from '@angular/material/badge';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -30,6 +33,7 @@ import { GetAllcartComponent } from './Components/get-allcart/get-allcart.compon
 import { FilterPipe } from './Pipe/filter.pipe';
 import { GetAllWishComponent } from './Components/get-all-wish/get-all-wish.component';
 import { WishListComponent } from './Components/wish-list/wish-list.component';
+import { PlacedComponent } from './Components/placed/placed.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,8 @@ import { WishListComponent } from './Components/wish-list/wish-list.component';
     GetAllcartComponent,
     FilterPipe,
     GetAllWishComponent,
-    WishListComponent
+    WishListComponent,
+    PlacedComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,10 @@ import { WishListComponent } from './Components/wish-list/wish-list.component';
     MatToolbarModule,MatTabsModule,
     MatMenuModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatPaginatorModule,
+    NgxPaginationModule,
+    MatBadgeModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

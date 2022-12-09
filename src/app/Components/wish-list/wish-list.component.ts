@@ -26,5 +26,11 @@ export class WishListComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.recieveBookList)
   }
+  deleteItem(Book:any){
 
+    console.log(Book)
+    this.book.removeWish(Book).subscribe((res:any)=>{
+      console.log(res)
+    })
+  }
 }

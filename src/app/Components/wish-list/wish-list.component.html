@@ -16,14 +16,14 @@
                 <p>by {{Book.product_id.author}}</p>
                 <div class="price-container" fxLayout="row">
                     <div class="dicounted-price">
-                        <b>Rs. 1500</b>
+                        <b>Rs. {{Book.product_id.discountPrice}}</b>
                     </div>
                     <div class="actual-price">
                         Rs. {{Book.product_id.price}}
                     </div>
                 </div>
             </div>
-            <div class="delete">
+            <div class="delete" (click)="deleteItem(Book.product_id._id)">
                 <img src="../../../assets/delete.svg" alt="">
             </div>
         </div>

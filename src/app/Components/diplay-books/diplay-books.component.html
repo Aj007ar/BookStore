@@ -7,10 +7,10 @@
   </div>
 </div>
 <div class="all-books-container">
-  <div class="all-books" *ngFor="let Book of recieveBookList | filter : Search">
+  <div class="all-books" *ngFor="let Book of recieveBookList | filter : Search | paginate: {itemsPerPage: 10 , currentPage:page,totalItems:totalLength}">
     <div class="book" (click)="onclick(Book)">
       <div class="book-image">
-        <img src="../../../assets/Image 11.png" alt="">
+        <img src="../../../assets/image 36.png" alt="">
       </div>
       <div class="book-description">
         <h2>{{Book.bookName}}</h2>
@@ -25,7 +25,7 @@
         </div>
         <div class="price-container" fxLayout="row">
           <div class="dicounted-price">
-            <b>Rs. 1500</b>
+            <b>Rs. {{Book.discountPrice}}</b>
           </div>
           <div class="actual-price">
             Rs. {{Book.price}}
@@ -34,4 +34,7 @@
       </div>
     </div>
   </div>
+  <pagination-controls (pageChange)="page=$event"></pagination-controls>
 </div>
+
+<app-footer></app-footer>
