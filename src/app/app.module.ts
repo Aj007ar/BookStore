@@ -9,7 +9,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatBadgeModule } from '@angular/material/badge';
-
+import { MatRadioModule } from '@angular/material/radio'
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -33,7 +33,9 @@ import { GetAllcartComponent } from './Components/get-allcart/get-allcart.compon
 import { FilterPipe } from './Pipe/filter.pipe';
 import { GetAllWishComponent } from './Components/get-all-wish/get-all-wish.component';
 import { WishListComponent } from './Components/wish-list/wish-list.component';
-import { PlacedComponent } from './Components/placed/placed.component';
+import { MatSelectModule } from '@angular/material/select';
+import { PlaceOrderComponent } from './Components/place-order/place-order.component'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -51,7 +53,7 @@ import { PlacedComponent } from './Components/placed/placed.component';
     FilterPipe,
     GetAllWishComponent,
     WishListComponent,
-    PlacedComponent
+    PlaceOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,10 @@ import { PlacedComponent } from './Components/placed/placed.component';
     MatExpansionModule,
     MatPaginatorModule,
     NgxPaginationModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSnackBarModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

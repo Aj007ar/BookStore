@@ -91,4 +91,15 @@ export class BooksService {
     }
     return this.httpService.putService("/bookstore_user/add_wish_list/"+bookId.product_id, Book, true, header)
   }
+
+  order(Book:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService("/bookstore_user/add/order", Book, true, header)
+  }
 }

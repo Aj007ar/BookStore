@@ -10,7 +10,7 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 })
 export class DiplayBooksComponent implements OnInit {
   @Input() recieveBookList: any;
-  // BookList:any
+  BookList=[]
   description: any;
   discountPrice: any;
   bookName: any;
@@ -42,5 +42,14 @@ export class DiplayBooksComponent implements OnInit {
     this.dataService.SendBookDetails(book)
     this.router.navigateByUrl('/home/book-details')   
     
+  }
+  lowtohigh(){
+    this.recieveBookList= this.recieveBookList.sort((low:any,high:any)=> low.discountPrice-high.discountPrice);//low and high as argument pass in this sort the book from price 
+    }
+  hightolow(){
+    this.recieveBookList= this.recieveBookList.sort((low:any,high:any)=> high.discountPrice-low.discountPrice);
+  }
+  newestarrivals(){
+    this.recieveBookList.reverse();
   }
 }

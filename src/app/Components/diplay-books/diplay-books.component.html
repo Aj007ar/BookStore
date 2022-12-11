@@ -1,40 +1,52 @@
-<div class="main">
-  <div class="books">
-    <p>Books</p>
-  </div>
-  <div type="dropdown">
-    <button>sort and relevent</button>
-  </div>
-</div>
-<div class="all-books-container">
-  <div class="all-books" *ngFor="let Book of recieveBookList | filter : Search | paginate: {itemsPerPage: 10 , currentPage:page,totalItems:totalLength}">
-    <div class="book" (click)="onclick(Book)">
-      <div class="book-image">
-        <img src="../../../assets/image 36.png" alt="">
+<div>
+  <div class="main">
+    <div class="books">
+      <p>Books</p>
+    </div>
+    <div type="dropdown">
+      <div class="sort">
+        <mat-form-field appearance="outline">
+          <mat-label>Sort by relevance</mat-label>
+          <mat-select class="matselect">
+              <mat-option (click)="lowtohigh()" value="one">Price:Low to High</mat-option>
+              <mat-option (click)=" hightolow()" value="two">Price:High to Low</mat-option>
+              <mat-option (click)="newestarrivals()" value="third">Newest Arrivals</mat-option>
+          </mat-select>
+      </mat-form-field>
       </div>
-      <div class="book-description">
-        <h2>{{Book.bookName}}</h2>
-        <p>by {{Book.author}}</p>
-        <div class="rating-container">
-          <div class="rating" fxLayout="row" fxLayoutAlign="center center">
-            4 <mat-icon class="star" fxFlexAlign="center">star</mat-icon>
-          </div>
-          <div class="no-of-people-rated">
-            (3)
-          </div>
+    </div>
+  </div>
+  <div class="all-books-container">
+    <div class="all-books"
+      *ngFor="let Book of recieveBookList | filter : Search | paginate: {itemsPerPage: 10 , currentPage:page,totalItems:totalLength}">
+      <div class="book" (click)="onclick(Book)">
+        <div class="book-image">
+          <img src="../../../assets/image 36.png" alt="">
         </div>
-        <div class="price-container" fxLayout="row">
-          <div class="dicounted-price">
-            <b>Rs. {{Book.discountPrice}}</b>
+        <div class="book-description">
+          <h2>{{Book.bookName}}</h2>
+          <p>by {{Book.author}}</p>
+          <div class="rating-container">
+            <div class="rating" fxLayout="row" fxLayoutAlign="center center">
+              4 <mat-icon class="star" fxFlexAlign="center">star</mat-icon>
+            </div>
+            <div class="no-of-people-rated">
+              (3)
+            </div>
           </div>
-          <div class="actual-price">
-            Rs. {{Book.price}}
+          <div class="price-container" fxLayout="row">
+            <div class="dicounted-price">
+              <b>Rs. {{Book.discountPrice}}</b>
+            </div>
+            <div class="actual-price">
+              Rs. {{Book.price}}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <pagination-controls (pageChange)="page=$event"></pagination-controls>
-</div>
+    <pagination-controls (pageChange)="page=$event" class="page"></pagination-controls>
 
-<app-footer></app-footer>
+  </div>
+  <!-- <app-footer></app-footer> -->
+</div>

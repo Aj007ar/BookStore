@@ -8,6 +8,7 @@ import { GetAllWishComponent } from './Components/get-all-wish/get-all-wish.comp
 import { GetAllcartComponent } from './Components/get-allcart/get-allcart.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
+import { PlaceOrderComponent } from './Components/place-order/place-order.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { AuthenticationGuard } from './Guard/authentication.guard';
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'books', component:GetAllBooksComponent},
   {path: 'book-details', component:BookDetailsComponent},
   {path: 'mycart', component:GetAllcartComponent},
-  {path: 'wishlist', component:GetAllWishComponent}
+  {path: 'wishlist', component:GetAllWishComponent},
+  {path: 'orderplaced', component:PlaceOrderComponent}
   ]},
 ];
 

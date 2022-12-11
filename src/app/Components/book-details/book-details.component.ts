@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { BooksService } from 'src/app/Services/BookService/books.service';
 import { DataService } from 'src/app/Services/DataService/data.service';
+
 
 @Component({
   selector: 'app-book-details',
@@ -20,8 +22,8 @@ export class BookDetailsComponent implements OnInit {
   quantity:any
   price: any;
   _id:any;
- 
-  constructor( private book:BooksService,private dataService:DataService,private router:Router) { }
+  // message:any;
+  constructor( private book:BooksService,private dataService:DataService,private router:Router,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.dataService.getBookDetails.subscribe((response:any)=>{
@@ -47,5 +49,8 @@ export class BookDetailsComponent implements OnInit {
       console.log(res)
       this.RefreshEvent.emit(res)
     })
+  }
+  openSnackbar(message:any,action:any){
+    this.snackbar.open(message,action)
   }
 }

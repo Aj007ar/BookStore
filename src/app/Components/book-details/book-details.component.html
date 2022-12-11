@@ -12,10 +12,10 @@
             </div>
             <div class="buttons">
                 <!-- <div class="bag"> -->
-                <button class="btn" (click)="cart()">add to bag</button>
+                <button class="btn" (click)="cart()" (click)="openSnackbar('Book added in cart','Dismis')">add to bag</button>
                 <!-- </div> -->
                 <div class="wishlst">
-                    <button class="btn" (click)="wish()">wishlist</button>
+                    <button class="btn" (click)="wish()" (click)="openSnackbar('Book added in Wishlist','Dismis')">wishlist</button>
                 </div>
             </div>
         </div>
@@ -23,19 +23,19 @@
             <h2>{{Book.bookName}}</h2>
             <p>by {{Book.author}}</p>
             <div class="rating-container">
-                <div class="rating" fxLayout="row" fxLayoutAlign="center center">
-                    4 <mat-icon class="star" fxFlexAlign="center">star</mat-icon>
+                <div class="rating">
+                    4 <mat-icon class="star">star</mat-icon>
                 </div>
                 <div class="no-of-people-rated">
                     (3)
                 </div>
             </div>
-            <div class="price-container" fxLayout="row">
+            <div class="price-container">
                 <div class="dicounted-price">
-                    <b>Rs. {{Book.product_id.discountPrice}}</b>
+                    Rs. {{Book.discountPrice}}
                 </div>
                 <div class="actual-price">
-                    Rs. {{Book.product_id.price}}
+                    Rs. {{Book.price}}
                 </div>
             </div>
             <hr>
@@ -75,5 +75,5 @@
             </div>
         </div>
     </div>
-    <app-footer></app-footer>
 </div>
+    <!-- <app-footer></app-footer> -->

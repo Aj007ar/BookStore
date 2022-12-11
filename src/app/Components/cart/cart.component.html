@@ -33,7 +33,7 @@
                         <img src="../../../assets/positive.svg" alt=" ">
                     </div>
                     <div class="btn">
-                        <button mat-button (click)="deleteItem(Book._id)">
+                        <button mat-button (click)="deleteItem(Book._id)" (click)="openSnackbar('Book Removed successfully','Dismis')">
                             Remove
                         </button>
                     </div>
@@ -85,7 +85,7 @@
             <div>
                 <h4>Address</h4>
                 <div class="fad">
-                    <p>{{Book.user_id.address.fullAddress}}</p>
+                    <p>{{Book.user_id.address[0].fullAddress}}</p>
                     <!-- <mat-form-field appearance="outline">
                             <input matInput placeholder="" formControlName="fullAddress">
                         </mat-form-field> -->
@@ -97,6 +97,7 @@
                         <label for="MoNum" class="label">City/Town</label>
                     </div>
                     <div>
+                        <p>{{Book.user_id.address[0].city}}</p>
                         <!-- <p>{{Book.user_id.fullName}}</p> -->
                         <!-- <mat-form-field class="cust-field" appearance="outline">
                                 <input matInput placeholder="Enter City/Town" type="text" formControlName="city"
@@ -109,6 +110,7 @@
                         <label for="MoNum" class="label">State</label>
                     </div>
                     <div>
+                        <p>{{Book.user_id.address[0].state}}</p>
                         <!-- <p>{{Book.user_id.fullName}}</p> -->
                         <!-- <mat-form-field class="cust-field" appearance="outline">
                                 <input matInput placeholder="Enter State" type="text" formControlName="state"
@@ -117,7 +119,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <!-- <div>
+                <h4 style="margin-top: 10px;" class="textName">Type</h4>
+                <mat-radio-group formControlName="addressType">
+                  <mat-radio-button class="example-margin" value="Home">Home</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="Office">Office</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="Other">Other</mat-radio-button>
+                </mat-radio-group>
+              </div>
+        </div> -->
         <div *ngIf="cont">
             <a class="order" (click)="continueBar()">Continue</a>
         </div>
@@ -149,7 +159,7 @@
             </div>
         </div>
         <div>
-            <a class="order">Checkout</a>
+            <a class="order" (click)="placeOrder()" routerLink="/home/orderplaced">Checkout</a>
         </div>
     </div>
 </div>
