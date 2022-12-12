@@ -27,6 +27,7 @@ export class CartComponent implements OnInit {
   cont = true;
   summary = true;
   Books: any
+  item_qty = 1;
 
   constructor(private dataService: DataService, private book: BooksService,private snackbar:MatSnackBar) { }
 
@@ -86,6 +87,29 @@ export class CartComponent implements OnInit {
   }
   openSnackbar(message:any,action:any){
     this.snackbar.open(message,action)
+  }
+  increase(Book: any) {
+    this.item_qty = Book.quantityToBuy;
+    this.item_qty += 1;
+    console.log("increased",this.item_qty);
+    this.updateCount(Book);
+  }
+  decrease(Book: any) {
+    this.item_qty =Book.quantityToBuy;
+    if (this.item_qty > 0) {
+      this.item_qty -= 1;
+      console.log( "decrease", this.item_qty);
+      this.updateCount(Book);
+    }
+
+  }
+  updateCount(Book:any){
+    let payload={
+      quantityToBuy: this.item_qty
+    }
+    this.book.quantity(Book._id,payload).subscribe((res:any)=>{
+      console.log(res)
+    })
   }
 }
 

@@ -81,7 +81,7 @@ export class BooksService {
     return this.httpService.deleteService("/bookstore_user/remove_wishlist_item/"+Book, true, header)
   }
 
-  quantity(bookId:any,Book:any)
+  quantity(bookId:any,req:any)
   {
     let header = {
       headers: new HttpHeaders({
@@ -89,7 +89,7 @@ export class BooksService {
         'x-access-token': this.token
       })
     }
-    return this.httpService.putService("/bookstore_user/add_wish_list/"+bookId.product_id, Book, true, header)
+    return this.httpService.putService("/bookstore_user/cart_item_quantity/"+bookId, req, true, header)
   }
 
   order(Book:any)

@@ -23,13 +23,13 @@
                     </div>
                 </div>
                 <div class="quantity">
-                    <div class="decreaseQty" (click)="addItem()">
+                    <div class="decreaseQty" (click)="decrease(Book)" (click)="openSnackbar('quantity decreased by 1','Dismis')">
                         <img src="../../../assets/negative.svg" alt=" ">
                     </div>
                     <div class="one">
-                        1
+                        {{Book.quantityToBuy}}
                     </div>
-                    <div class="IncreaseQty" (click)="addItem()">
+                    <div class="IncreaseQty" (click)="increase(Book)">
                         <img src="../../../assets/positive.svg" alt=" ">
                     </div>
                     <div class="btn">

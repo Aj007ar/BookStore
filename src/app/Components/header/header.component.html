@@ -1,27 +1,28 @@
-<mat-toolbar class="header">
-    <div class="logo" routerLink="/home/books">
-        <img src="../../../assets/education (1).svg" alt="">
-        <p>Bookstore</p>
-    </div>
-    <div class="search-container">
-        <div class="s-btn" type="button">
-            <img src="../../../assets/search.svg">
+<div class="fixpos">
+    <mat-toolbar class="header">
+        <div class="logo" routerLink="/home/books">
+            <img src="../../../assets/education (1).svg" alt="">
+            <p>Bookstore</p>
         </div>
-        <div class="srch">
-            <input class="search-field" type="text" aria-label="search" placeholder="Search" autocomplete="off"
-                role="combobox" aria-hidden="false" (keyup)="searchBook($event)">
+        <div class="search-container" (keyup)="searchBook($event)">
+            <div class="s-btn" type="button">
+                <img src="../../../assets/search.svg">
+            </div>
+            <div class="srch">
+                <input class="search-field" type="text" aria-label="search" placeholder="Search" autocomplete="off"
+                    role="combobox" aria-hidden="false">
+            </div>
         </div>
-    </div>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="profile">
-        <mat-icon [matMenuTriggerFor]="menu">
-            <img src="../../../assets/person_white_24dp.svg" alt="">
-        </mat-icon>
-        <label>Profile</label>
-    </button>
-    <mat-menu #menu="matMenu" class="menu-field">
-        <div class="bg">
-            <div>
+        <!-- <span class="example-spacer"></span> -->
+        <button mat-icon-button class="profile">
+            <mat-icon [matMenuTriggerFor]="menu">
+                <img src="../../../assets/person_white_24dp.svg" alt="">
+            </mat-icon>
+            <label>Profile</label>
+        </button>
+    
+        <mat-menu #menu="matMenu" class="menu-field">
+            <div class="bg">
                 <h4>Welcome</h4>
                 <p>To acsess account and manage orders</p>
                 <button class="login-btn" (click)="Logout()">Logout</button>
@@ -35,12 +36,13 @@
                     <p>Wishlist</p>
                 </div>
             </div>
-        </div>
-    </mat-menu>
-    <button mat-icon-button class="cart" [matBadge]="content" matBadgeColor="warn" (click)="cart()">
-        <mat-icon>
-            <img src="../../../assets/shopping_cart_white_24dp.svg" alt="">
-        </mat-icon>
-        <label>Cart</label>
-    </button>
-</mat-toolbar>
+        </mat-menu>
+
+        <button mat-icon-button class="cart" [matBadge]="content" matBadgeColor="warn" (click)="cart()">
+            <mat-icon>
+                <img src="../../../assets/shopping_cart_white_24dp.svg" alt="">
+            </mat-icon>
+            <label>Cart</label>
+        </button>
+    </mat-toolbar>
+</div>
