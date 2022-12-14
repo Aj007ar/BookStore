@@ -51,12 +51,12 @@
 
 p {
     text-align: left;
-font: normal normal medium 18px/24px Roboto;
-letter-spacing: 0px;
-color: #0A0102;
-text-transform: uppercase;
-margin-left: 84px;
-margin-top: 18px;
+    font: normal normal medium 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: uppercase;
+    margin-left: 84px;
+    margin-top: 18px;
 }
 
 .login-head {
@@ -81,34 +81,17 @@ margin-top: 18px;
     margin: 0rem;
     height: 58px;
     padding: 0px 40px;
-    margin-bottom: 6rem;
+    margin-bottom: 7rem;
     margin-left: 8px;
     margin-top: -13px;
     width: 325px;
 }
-.fname{
-    margin: 0rem;
-    height: 58px;
-    padding: 0px 40px;
-    margin-bottom: 2rem;
-    margin-left: 8px;
-    margin-top: -13px;
-    width: 325px;
-}
+
 .pass-field {
     margin: 0rem;
     height: 20px;
     padding: 4px 9px;
-    margin-bottom: 9rem;
-    margin-left: 40px;
-    margin-top: -84px;
-    width: 325px;
-}
-.mo-field{
-    margin: 0rem;
-    height: 20px;
-    padding: 4px 9px;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
     margin-left: 40px;
     margin-top: -84px;
     width: 325px;
@@ -128,14 +111,23 @@ margin-top: 18px;
     opacity: 1;
 }
 
+.forget-pass {
+    margin: 2rem;
+    padding: 1rem;
+    margin-left: 180px;
+    color: #9D9D9D;
+    margin-bottom: -3px;
+}
+
 .form-control {
     width: 255px;
 }
+
 .button {
     background-color: #A03037;
     border: none;
     color: white;
-    padding: 11px 106px;
+    padding: 11px 107px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -147,6 +139,7 @@ margin-top: 18px;
     border-radius: 6px;
     margin-left: 55px;
 }
+
 .mat-form-field {
     padding: 0rem;
     width: 94%;
@@ -155,12 +148,13 @@ margin-top: 18px;
     background-color: #e0e0e0;
     border: none;
     color: white;
-    padding: 9px 100px;
+    padding: 11px 112px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: -9px 6px;
+    margin: 0px 6px;
+    /* margin-top: -94px; */
     cursor: pointer;
     border-radius: 6px;
     margin-left: 55px;
@@ -175,6 +169,7 @@ margin-top: 18px;
     margin-left: 180px;
     margin-top: 14px;
 }
+
 @media only screen and (min-width: 350px) and (max-width: 853px) {
     .left-container {
         margin: 1px;

@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/UserService/user.service';
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss']
+  selector: 'app-admin-signup',
+  templateUrl: './admin-signup.component.html',
+  styleUrls: ['./admin-signup.component.scss']
 })
-export class RegistrationComponent implements OnInit {
+export class AdminSignupComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
   userId=true;
@@ -28,14 +28,14 @@ export class RegistrationComponent implements OnInit {
     this.submitted = true;
 
     if (this.registerForm.valid) {
-      console.log("User registered successfully");
+      console.log("Admin registered successfully");
       let payload = {
         fullName: this.registerForm.value.fullName,
         email: this.registerForm.value.email,
         password: this.registerForm.value.password,
         phone: this.registerForm.value.phone
       }
-      this.user.signup(payload).subscribe((response: any) => {
+      this.user.adminsignup(payload).subscribe((response: any) => {
         console.log(response)
       }
       )
@@ -43,8 +43,5 @@ export class RegistrationComponent implements OnInit {
 
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
   }
-  userBar() {
-    this.userId = false
-    this.admin = false
-  }
+
 }

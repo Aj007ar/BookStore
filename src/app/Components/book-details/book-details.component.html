@@ -12,16 +12,20 @@
             </div>
             <div class="buttons">
                 <!-- <div class="bag"> -->
-                <button class="btn" (click)="cart()" (click)="openSnackbar('Book added in cart','Dismis')">add to bag</button>
+                <button class="btn" (click)="cart()" (click)="openSnackbar('Book added in cart','Dismis')">add to
+                    bag</button>
                 <!-- </div> -->
                 <div class="wishlst">
-                    <button class="btn" (click)="wish()" (click)="openSnackbar('Book added in Wishlist','Dismis')">wishlist</button>
+                    <button class="btn" (click)="wish()"
+                        (click)="openSnackbar('Book added in Wishlist','Dismis')">wishlist</button>
                 </div>
             </div>
         </div>
         <div class="book-description">
-            <h2>{{Book.bookName}}</h2>
-            <p>by {{Book.author}}</p>
+            <div class="bookname">
+                <h2>{{Book.bookName}}</h2>
+                <p>by {{Book.author}}</p>
+            </div>
             <div class="rating-container">
                 <div class="rating">
                     4 <mat-icon class="star">star</mat-icon>
@@ -39,7 +43,7 @@
                 </div>
             </div>
             <hr>
-            <div>
+            <div class="disc">
                 <ul>
                     <li>
                         Book Description
@@ -68,12 +72,28 @@
                     </div>
                 </div>
                 <textarea matInput class="searchInput" type="text" placeholder="write a review"
-                        style="width: 570px;height: 70px;" name="comment" #box></textarea>
-                        <div fxLayoutAlign="end center">
-                            <button class="btn">Submit</button>
-                        </div>
+                     name="comment" #box></textarea>
+                <div class="sub">
+                    <button class="btn">Submit</button>
+                </div>
             </div>
+            <!-- <div style="display: flex; flex-direction: column-reverse;">
+                <div class="element " fxLayoutGap="50px" *ngFor="let feedback of Feedback">
+                    <div>
+                        <div>
+                            <span class="fullName"><b></b>{{(feedback.fullName)}}</span>
+                        </div>
+                        <div>
+                            <span class="element-rating"> <b></b></span>
+                        </div>
+                        <div>
+                            <span class="comment"><b></b></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
         </div>
     </div>
 </div>
-    <!-- <app-footer></app-footer> -->
+<app-footer></app-footer>

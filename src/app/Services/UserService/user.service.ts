@@ -9,6 +9,16 @@ export class UserService {
 
   constructor(private httpService:HttpService) { }
 
+  adminlogin(payload:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.postService("/bookstore_user/admin/login", payload, false, header)
+  }
+
   login(payload:any)
   {
     let header = {
@@ -17,6 +27,16 @@ export class UserService {
       })
     }
     return this.httpService.postService("/bookstore_user/login", payload, false, header)
+  }
+
+  adminsignup(payload:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.postService("/bookstore_user/admin/registration", payload, false, header)
   }
 
   signup(payload:any)

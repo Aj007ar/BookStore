@@ -35,7 +35,9 @@ import { GetAllWishComponent } from './Components/get-all-wish/get-all-wish.comp
 import { WishListComponent } from './Components/wish-list/wish-list.component';
 import { MatSelectModule } from '@angular/material/select';
 import { PlaceOrderComponent } from './Components/place-order/place-order.component'
-import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AdminLoginComponent } from './Components/admin-login/admin-login.component';
+import { AdminSignupComponent } from './Components/admin-signup/admin-signup.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     FilterPipe,
     GetAllWishComponent,
     WishListComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    AdminLoginComponent,
+    AdminSignupComponent,
+  
   ],
   imports: [
     BrowserModule,

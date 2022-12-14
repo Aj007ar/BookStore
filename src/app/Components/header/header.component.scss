@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-
+  background-color: #A03037;
   .header {
     background-color: #A03037;
     // position: fixed;
@@ -76,11 +76,11 @@
     .profile {
       display: flex;
       flex-direction: column;
-      margin: 60px;
+      // margin: 60px;
       background: transparent;
       border: none;
       color: white;
-      margin-right: 61px;
+      padding-right: 50px;
     }
 
     .profile label {
@@ -157,13 +157,17 @@
 
 @media only screen and (min-width: 350px) and (max-width: 853px) {
   .header{
-    margin-left: -73px;
+    background-color: #A03037;
+    margin-left: -198px;
+    .logo{
+      margin-right: -26px;
+    }
     .logo p {
-      font-size: 25px;
+      display: none;
     }
 
     .logo img {
-      margin-left: -130px;
+      margin-left: -38px;
     }
     .search-container {
       height: 30%;
@@ -173,7 +177,7 @@
       }
     }
     .profile{
-      margin-right: 1px;
+      margin-right: -42px;
     }
     .cart{
       margin-right: 1px;

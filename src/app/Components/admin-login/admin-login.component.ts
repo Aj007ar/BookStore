@@ -2,18 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/UserService/user.service';
 
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrls: ['./admin-login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class AdminLoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted=false;
   users='1'
   userId=true;
   admin=true;
+  AduserId=true;
+  Adadmin=true;
   constructor(private formBuilder: FormBuilder,private user: UserService) { }
 
   ngOnInit(): void {
@@ -28,12 +29,12 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     if (this.loginForm.valid) {
-      console.log("User login successfully");
+      console.log("admin login successfully");
       let payload = {
         email: this.loginForm.value.email,
         password: this.loginForm.value.password,
       }
-      this.user.login(payload).subscribe((response: any) => {
+      this.user.adminlogin(payload).subscribe((response: any) => {
         console.log(response);
         localStorage.setItem('token',response.result.accessToken)
       }
@@ -43,8 +44,5 @@ export class LoginComponent implements OnInit {
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value))
   }
 
-  userBar() {
-    this.userId = false
-    this.admin = false
-  }
+
 }

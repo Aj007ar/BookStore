@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminLoginComponent } from './Components/admin-login/admin-login.component';
+import { AdminSignupComponent } from './Components/admin-signup/admin-signup.component';
 import { BookDetailsComponent } from './Components/book-details/book-details.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { DiplayBooksComponent } from './Components/diplay-books/diplay-books.component';
@@ -15,6 +17,8 @@ import { AuthenticationGuard } from './Guard/authentication.guard';
 const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'signup', component:RegistrationComponent},
+  {path:'adminlogin', component:AdminLoginComponent},
+  {path:'adminsignup', component:AdminSignupComponent},
   {path:'',redirectTo:"/login",pathMatch:'full'},
   {path:'home', component:HomeComponent,canActivate:[AuthenticationGuard],
   children:[

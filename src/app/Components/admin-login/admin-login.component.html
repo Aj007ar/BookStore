@@ -12,15 +12,12 @@
                 <button style="color: #878787;" routerLink="/signup">SIGNUP</button>
             </div>
         </div>
-        <!-- <div class="user" *ngIf="userId">
-                <button (click)="userBar()">User Login</button>
-            </div> -->
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-field">
                 <div class="input-field">
                     <label for="email" class="label">Email Id</label>
                     <mat-form-field appearance="outline">
-                        <mat-label>User Email Id</mat-label>
+                        <mat-label>Admin Email Id</mat-label>
                         <input matInput placeholder="Email or phone" type="text" formControlName="email"
                             class="form-control">
                     </mat-form-field>
@@ -28,7 +25,7 @@
                 <div class="pass-field">
                     <label for="password" class="label">Password</label>
                     <mat-form-field appearance="outline">
-                        <mat-label>User Password</mat-label>
+                        <mat-label>Admin Password</mat-label>
                         <input matInput placeholder="Password" type="password" formControlName="password"
                             class="form-control">
                     </mat-form-field>
@@ -37,7 +34,7 @@
                     <h3><a class="link">Forget password</a></h3>
                 </div>
                 <div class="sign-field">
-                    <a class="button" routerLink="/home/books" (click)="onSubmit()">User Login</a>
+                    <a class="button" routerLink="/home/books" (click)="onSubmit()">Admin Login</a>
                 </div>
             </div>
         </form>
@@ -45,7 +42,7 @@
             <h2>Or</h2>
         </div>
         <div class="admin">
-            <button class="adminBtn" routerLink="/adminlogin">Admin Login</button>
+            <button class="adminBtn" routerLink="/login">User Login</button>
         </div>
     </div>
 </div>

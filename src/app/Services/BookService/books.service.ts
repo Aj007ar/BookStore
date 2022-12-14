@@ -102,4 +102,13 @@ export class BooksService {
     }
     return this.httpService.postService("/bookstore_user/add/order", Book, true, header)
   }
+  getComment(Book:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.getService("/bookstore_user/get/feedback/"+Book,true, header)
+  }
 }

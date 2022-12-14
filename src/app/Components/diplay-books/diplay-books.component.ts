@@ -19,6 +19,7 @@ export class DiplayBooksComponent implements OnInit {
   price: any;
   id: any;
   Search='';
+  Feedback=[];
   constructor(private router:Router,private book:BooksService,private dataService:DataService) { }
 
   totalLength:any;
@@ -38,10 +39,11 @@ export class DiplayBooksComponent implements OnInit {
     this.id = id;
     this.router.navigate(['/home/book-details'], { state: { value: id } })
   }
-  onclick(book: any){
+  onclick(book:any){
+    
     this.dataService.SendBookDetails(book)
     this.router.navigateByUrl('/home/book-details')   
-    
+    // localStorage.setItem('BookId',book.result.product_id)
   }
   lowtohigh(){
     this.recieveBookList= this.recieveBookList.sort((low:any,high:any)=> low.discountPrice-high.discountPrice);//low and high as argument pass in this sort the book from price 
@@ -52,4 +54,15 @@ export class DiplayBooksComponent implements OnInit {
   newestarrivals(){
     this.recieveBookList.reverse();
   }
+  // comment() {
+  //   let Book = {
+  //     product_id: this.recieveBookList._id,
+  //   }
+  //   console.log(Book)
+  //   this.book.getComment(Book).subscribe((res: any) => {
+  //     console.log(res)
+  //     this.Feedback=res.result.product_id;
+  //     console.log(this.Feedback);
+  //   })
+  // }
 }
