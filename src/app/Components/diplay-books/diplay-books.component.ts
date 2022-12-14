@@ -39,11 +39,10 @@ export class DiplayBooksComponent implements OnInit {
     this.id = id;
     this.router.navigate(['/home/book-details'], { state: { value: id } })
   }
-  onclick(book:any){
-    
+  onclick(book:any){ 
     this.dataService.SendBookDetails(book)
     this.router.navigateByUrl('/home/book-details')   
-    // localStorage.setItem('BookId',book.result.product_id)
+    // localStorage.setItem('BookId',book.result._id)
   }
   lowtohigh(){
     this.recieveBookList= this.recieveBookList.sort((low:any,high:any)=> low.discountPrice-high.discountPrice);//low and high as argument pass in this sort the book from price 

@@ -22,14 +22,17 @@ export class BookDetailsComponent implements OnInit {
   quantity: any
   price: any;
   _id: any;
-  array:any;
-  Feedback=[];
+  array: any;
+  Feedback = [];
+  BookId: any;
   // message:any;
-  constructor(private book: BooksService, private dataService: DataService, private router: Router, private snackbar: MatSnackBar) { 
+  constructor(private book: BooksService, private dataService: DataService, private router: Router, private snackbar: MatSnackBar) {
     // localStorage.getItem('BookId')
   }
 
   ngOnInit(): void {
+    // this.BookId = localStorage.getItem("BookId");
+    // console.log(this.BookId);
     this.dataService.getBookDetails.subscribe((response: any) => {
       this.Book = response;
       // this.comment();
@@ -58,15 +61,15 @@ export class BookDetailsComponent implements OnInit {
   openSnackbar(message: any, action: any) {
     this.snackbar.open(message, action)
   }
-  comment() {
-    let Book = {
-      product_id: this.recieveBookList._id,
-    }
-    console.log(Book)
-    this.book.getComment(Book).subscribe((res: any) => {
-      console.log(res)
-      this.Feedback=res.result.product_id;
-      console.log(this.Feedback);
-    })
-  }
+  // comment() {
+  //   let Book = {
+  //     product_id: this.Book._id,
+  //   }
+  //   console.log(Book)
+  //   this.book.getComment(Book).subscribe((res: any) => {
+  //     console.log(res)
+  //     this.Feedback = res.result;
+  //     console.log(this.Feedback);
+  //   })
+  // }
 }

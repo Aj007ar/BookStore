@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 import { AdminLoginComponent } from './Components/admin-login/admin-login.component';
 import { AdminSignupComponent } from './Components/admin-signup/admin-signup.component';
 import { BookDetailsComponent } from './Components/book-details/book-details.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { DiplayBooksComponent } from './Components/diplay-books/diplay-books.component';
 import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
+import { GetAllOrdersComponent } from './Components/get-all-orders/get-all-orders.component';
 import { GetAllWishComponent } from './Components/get-all-wish/get-all-wish.component';
 import { GetAllcartComponent } from './Components/get-allcart/get-allcart.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -15,10 +17,14 @@ import { RegistrationComponent } from './Components/registration/registration.co
 import { AuthenticationGuard } from './Guard/authentication.guard';
 
 const routes: Routes = [
-  {path:'login', component:LoginComponent},
-  {path:'signup', component:RegistrationComponent},
+  
   {path:'adminlogin', component:AdminLoginComponent},
   {path:'adminsignup', component:AdminSignupComponent},
+  {path:'',redirectTo:"/adminlogin",pathMatch:'full'},
+  {path:'adminhome',component:GetAllOrdersComponent,canActivate:[AuthenticationGuard]},
+
+{path:'login', component:LoginComponent},
+  {path:'signup', component:RegistrationComponent},
   {path:'',redirectTo:"/login",pathMatch:'full'},
   {path:'home', component:HomeComponent,canActivate:[AuthenticationGuard],
   children:[

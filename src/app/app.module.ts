@@ -38,6 +38,8 @@ import { PlaceOrderComponent } from './Components/place-order/place-order.compon
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AdminLoginComponent } from './Components/admin-login/admin-login.component';
 import { AdminSignupComponent } from './Components/admin-signup/admin-signup.component';
+import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
+import { GetAllOrdersComponent } from './Components/get-all-orders/get-all-orders.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { AdminSignupComponent } from './Components/admin-signup/admin-signup.com
     PlaceOrderComponent,
     AdminLoginComponent,
     AdminSignupComponent,
+    AdminDashboardComponent,
+    GetAllOrdersComponent,
   
   ],
   imports: [

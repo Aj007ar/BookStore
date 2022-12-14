@@ -111,4 +111,14 @@ export class BooksService {
     }
     return this.httpService.getService("/bookstore_user/get/feedback/"+Book,true, header)
   }
+
+  getAllOrder(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.getService("/bookstore_user/admin/get/order",true, header)
+  }
 }

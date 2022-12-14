@@ -1,0 +1,86 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.fixpos {
+    // position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #A03037;
+
+    .header {
+        background-color: #A03037;
+        // position: fixed;
+        // margin-top: -112px;
+
+
+        .logo {
+            display: flex;
+            flex-direction: row;
+            margin-left: 230px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        .logo img {
+            width: 44px;
+            margin-right: 12px;
+            margin-bottom: 12px;
+
+        }
+
+        .search-container {
+            display: flex;
+            flex-direction: row;
+            margin: 35px;
+            border-radius: 1px;
+            height: 56%;
+            padding-right: 20px;
+            background-color: white;
+
+        }
+
+        .search-field {
+            margin-bottom: 7px;
+            width: 500px;
+            height: 42px;
+            border: none;
+            background: transparent;
+            font-size: 18px;
+            box-sizing: border-box;
+            outline: none;
+            font-variant-ligatures: none;
+            background: transparent;
+            border: none;
+            font: normal 16px Google Sans, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .s-btn img {
+            height: 28px;
+            margin-bottom: -12px;
+        }
+    }
+}
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.src {
+    width: 200px;
+    height: 200px;
+}
+.tbl{
+    margin: 1px;
+    margin-left: 75px;
+}
+.header{
+    margin-top: 1px;
+    margin-left: 30px;
+}
+.page {
+    margin-left: 299px;
+
+}
