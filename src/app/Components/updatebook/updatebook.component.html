@@ -1,0 +1,28 @@
+<div>
+    <h1>Update</h1>
+    <span>BookName</span>
+    <div class="textform">
+        <input matInput [(ngModel)]="bookName">
+    </div>
+    <span>author</span>
+    <div class="textform">
+        <input matInput [(ngModel)]="author">
+    </div>
+    <span>description</span>
+    <div class="textform">
+        <input matInput [(ngModel)]="description">
+    </div>
+    <span>quantity</span>
+    <div class="textform">
+        <input matInput [(ngModel)]="quantity">
+    </div>
+    <span>Price</span>
+    <div class="textform">
+        <input matInput [(ngModel)]="price">
+    </div>
+    <span>DiscountPrice</span>
+    <div class="textform">
+        <input matInput [(ngModel)]="discountPrice">
+    </div>
+    <button (click)="updateBook()">Update</button>
+</div>

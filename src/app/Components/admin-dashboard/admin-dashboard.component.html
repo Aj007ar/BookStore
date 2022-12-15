@@ -1,6 +1,6 @@
 <div class="fixpos">
     <mat-toolbar class="header">
-        <div class="logo" routerLink="/home/books">
+        <div class="logo" routerLink="/adminhome/adminbooks">
             <img src="../../../assets/education (1).svg" alt="">
             <p>Bookstore</p>
         </div>
@@ -13,61 +13,24 @@
                     role="combobox" aria-hidden="false">
             </div>
         </div>
+        <button mat-icon-button class="profile">
+            <mat-icon [matMenuTriggerFor]="menu">
+                <img src="../../../assets/person_white_24dp.svg" alt="">
+            </mat-icon>
+            <label>Profile</label>
+        </button>
+    
+        <mat-menu #menu="matMenu" class="menu-field">
+            <div class="bg">
+                <h4>Welcome</h4>
+                <button class="login-btn" (click)="Logout()">Logout</button>
+                <hr>
+                <div class="order" routerLink="/adminhome/orders">
+                    <img src="../../../assets/markunread-mailbox.svg" alt="">
+                    <p>All Orders</p>
+                </div>
+            </div>
+        </mat-menu>
     </mat-toolbar>
 </div>
-<div class="header">
-    <h2>All Orders</h2>
-</div>
-<div class="tbl">
-    <TABLE style="border: none; " BORDER="0 " WIDTH="70% " CELLPADDING="10 " CELLSPACING="0 ">
-        <TR style="border: 1px solid #DCDCDC;background-color: gainsboro ">
-            <TH COLSPAN="1 ">
-                <H3 style="text-align: center; ">Book</H3>
-            </TH>
-            <TH COLSPAN="1 ">
-                <H3 style="text-align: center; ">Book Name</H3>
-            </TH>
-            <TH COLSPAN="1 ">
-                <H3 style="text-align: center; ">Book Price</H3>
-            </TH>
-            <TH COLSPAN="1 ">
-                <H3 style="text-align: center; ">Quantity</H3>
-            </TH>
-            <TH COLSPAN="1 ">
-                <H3 style="text-align: center; ">Full Name</H3>
-            </TH>
-            <TH COLSPAN="1 ">
-                <H3 style="text-align: center; ">Mobile Number</H3>
-            </TH>
-            <TH COLSPAN="1 ">
-                <H3 style="text-align: center; ">Address</H3>
-            </TH>
-            <TH COLSPAN="1 ">
-                <H3 style="text-align: center; ">City</H3>
-            </TH>
-            <TH COLSPAN="1 ">
-                <H3 style="text-align: center; ">State</H3>
-            </TH>
-        </TR>
-        
-        <TR *ngFor="let Book of recieveOrderList | paginate: {itemsPerPage: 8 , currentPage:page,totalItems:totalLength}">
-            <TH style="color: #333232;opacity: 0.71; "> 
-                <div class="image">
-                    <img src="../../../assets/image 36.png" alt="">
-                </div>
-            </TH>
-            <TH style="color: #333232;opacity: 0.71; ">{{Book.product_name}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.product_price}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.product_quantity}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.user_id.fullName}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.user_id.phone}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.user_id.address.fullAddress}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.user_id.address.city}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.user_id.address.state}}</TH>
-        </TR>
-    
-    </TABLE>
-    <div class="page">
-        <pagination-controls (pageChange)="page=$event" class="page"></pagination-controls>
-      </div>
-</div>
+<router-outlet></router-outlet>

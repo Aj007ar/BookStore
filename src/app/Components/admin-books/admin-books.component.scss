@@ -1,0 +1,51 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+    margin-left: 227px;
+    margin-right: 304px;
+}
+
+.books {
+    font-size: 27px;
+    font-family: 'Roboto';
+}
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.src {
+    width: 200px;
+    height: 200px;
+}
+.tbl{
+    margin: 1px;
+    margin-left: 229px;
+    margin-right: -210px;
+}
+.header{
+    margin-top: 1px;
+    margin-left: 30px;
+}
+.page {
+    margin-left: 299px;
+
+}
+.update{
+    margin: 1px;
+    margin-left: 20px;
+}
+.delete{
+    margin: 1px;
+    margin-left: 20px;
+    margin-top: 39px;
+}
+.Addbook{
+    margin: 1px;
+}
+.Addbook button{
+    margin: 1px;
+}

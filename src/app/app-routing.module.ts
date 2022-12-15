@@ -6,14 +6,17 @@ import { AdminSignupComponent } from './Components/admin-signup/admin-signup.com
 import { BookDetailsComponent } from './Components/book-details/book-details.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { DiplayBooksComponent } from './Components/diplay-books/diplay-books.component';
+import { GetAllAdminBooksComponent } from './Components/get-all-admin-books/get-all-admin-books.component';
 import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
 import { GetAllOrdersComponent } from './Components/get-all-orders/get-all-orders.component';
 import { GetAllWishComponent } from './Components/get-all-wish/get-all-wish.component';
 import { GetAllcartComponent } from './Components/get-allcart/get-allcart.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
+import { OrdersComponent } from './Components/orders/orders.component';
 import { PlaceOrderComponent } from './Components/place-order/place-order.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
+import { UpdatebookComponent } from './Components/updatebook/updatebook.component';
 import { AuthenticationGuard } from './Guard/authentication.guard';
 
 const routes: Routes = [
@@ -21,7 +24,12 @@ const routes: Routes = [
   {path:'adminlogin', component:AdminLoginComponent},
   {path:'adminsignup', component:AdminSignupComponent},
   {path:'',redirectTo:"/adminlogin",pathMatch:'full'},
-  {path:'adminhome',component:GetAllOrdersComponent,canActivate:[AuthenticationGuard]},
+  {path:'adminhome',component:AdminDashboardComponent,canActivate:[AuthenticationGuard],
+  children:[
+    {path:'adminbooks',component:GetAllAdminBooksComponent},
+    {path:'orders',component:GetAllOrdersComponent},
+    {path:'update',component:UpdatebookComponent}
+  ]},
 
 {path:'login', component:LoginComponent},
   {path:'signup', component:RegistrationComponent},

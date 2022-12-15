@@ -1,6 +1,6 @@
 import { importProvidersFrom, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatTooltipModule } from '@angular/material/tooltip'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -40,6 +40,12 @@ import { AdminLoginComponent } from './Components/admin-login/admin-login.compon
 import { AdminSignupComponent } from './Components/admin-signup/admin-signup.component';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 import { GetAllOrdersComponent } from './Components/get-all-orders/get-all-orders.component';
+import { GetAllAdminBooksComponent } from './Components/get-all-admin-books/get-all-admin-books.component';
+import { OrdersComponent } from './Components/orders/orders.component';
+import { AdminBooksComponent } from './Components/admin-books/admin-books.component';
+import { AddbookComponent } from './Components/addbook/addbook.component';
+import { UpdatebookComponent } from './Components/updatebook/updatebook.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -62,6 +68,11 @@ import { GetAllOrdersComponent } from './Components/get-all-orders/get-all-order
     AdminSignupComponent,
     AdminDashboardComponent,
     GetAllOrdersComponent,
+    GetAllAdminBooksComponent,
+    OrdersComponent,
+    AdminBooksComponent,
+    AddbookComponent,
+    UpdatebookComponent,
   
   ],
   imports: [
@@ -82,7 +93,9 @@ import { GetAllOrdersComponent } from './Components/get-all-orders/get-all-order
     MatBadgeModule,
     MatRadioModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]

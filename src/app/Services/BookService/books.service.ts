@@ -121,4 +121,36 @@ export class BooksService {
     }
     return this.httpService.getService("/bookstore_user/admin/get/order",true, header)
   }
+
+  AddBook(Book:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.postService("/bookstore_user/admin/add/book", Book, true, header)
+  }
+
+  UpdateBook(bookId:any,req:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.putService("/bookstore_user/admin/update/book/"+bookId, req, true, header)
+  }
+  deleteBook(Book:any)
+  {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': this.token
+      })
+    }
+    return this.httpService.deleteService("/bookstore_user/admin/delete/book/"+Book, true, header)
+  }
 }

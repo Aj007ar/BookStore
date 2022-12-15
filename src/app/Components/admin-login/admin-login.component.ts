@@ -29,6 +29,7 @@ export class AdminLoginComponent implements OnInit {
     this.submitted = true;
 
     if (this.loginForm.valid) {
+      //if(radio for admin else user)
       console.log("admin login successfully");
       let payload = {
         email: this.loginForm.value.email,
