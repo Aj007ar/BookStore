@@ -1,1 +1,58 @@
-<p>addbook works!</p>
+<h1>Add Book Details</h1>
+<form [formGroup]="Addnewbookform">
+    <div>
+        <span>Book Name</span>
+        <div>
+            <mat-form-field width="600px" appearance="outline">
+                <input matInput formControlName="bookName">
+                <mat-error>bookname Required!</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div>
+        <span>Author</span>
+        <div>
+            <mat-form-field width="800px" appearance="outline">
+                <input matInput formControlName="author">
+                <mat-error>author Required!</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div>
+        <span>Description</span>
+        <div>
+            <mat-form-field width="600px" appearance="outline">
+                <input matInput formControlName="description">
+                <mat-error>description Required!</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div>
+        <span>Quantity</span>
+        <div>
+            <mat-form-field width="600px" appearance="outline">
+                <input matInput formControlName="quantity">
+                <mat-error>quantity Required!</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div>
+        <span>Price</span>
+        <div>
+            <mat-form-field width="600px" appearance="outline">
+                <input matInput formControlName="price">
+                <mat-error>price Required!</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div>
+        <span>DiscountPrice</span>
+        <div>
+            <mat-form-field width="600px" appearance="outline">
+                <input matInput formControlName="discountPrice">
+                <mat-error>discountPrice Required!</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+</form>
+<button (click)="addnewbook()">Add Book</button>

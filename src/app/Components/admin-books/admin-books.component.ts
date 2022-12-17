@@ -76,4 +76,21 @@ export class AdminBooksComponent implements OnInit {
       console.log(res)
     })
   }
+
+  addDialog(){
+    const dialogRef=this.dialog.open(AddbookComponent,{
+      width:'40%',
+      height:'auto',
+    });
+    dialogRef.afterClosed().subscribe(reponse=>{
+      
+      this.bookName;
+      this.author;
+      this.description;
+      this.quantity;
+      this.price;
+      this.discountPrice;
+      console.log('The dialog was closed',reponse);
+    })
+  }
 }

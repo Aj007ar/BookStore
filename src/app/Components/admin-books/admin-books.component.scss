@@ -4,17 +4,18 @@
     justify-content: space-between;
     margin-top: 25px;
     margin-left: 227px;
-    margin-right: 304px;
+    margin-right: 240px;
 }
 
 .books {
     font-size: 27px;
     font-family: 'Roboto';
+    margin-top: 21px;
 }
 table,
 th,
 td {
-    border: 1px solid black;
+    border: 1px solid rgb(116, 106, 106);
 }
 
 .src {
@@ -35,17 +36,33 @@ td {
 
 }
 .update{
-    margin: 1px;
-    margin-left: 20px;
+    margin-top: 16px;
 }
 .delete{
-    margin: 1px;
-    margin-left: 20px;
-    margin-top: 39px;
+    margin-top: 16px;
 }
 .Addbook{
     margin: 1px;
 }
 .Addbook button{
     margin: 1px;
+}
+.demo-button-container {
+    padding-bottom: 16px;
+    margin-left: 231px;
+  }
+  
+  .demo-button {
+    margin-left: -1px;
+    height: 42px;
+    width: 131px;
+    font-size: 20px;
+    font-family: monospace;
+  }
+  table {
+    counter-reset: tableCount;     
+}
+.counterCell:before {              
+    content: counter(tableCount); 
+    counter-increment: tableCount; 
 }
