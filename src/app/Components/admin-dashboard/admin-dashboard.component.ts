@@ -20,4 +20,7 @@ export class AdminDashboardComponent implements OnInit {
     this.router.navigateByUrl("/adminlogin")
     console.log("Logout Successfully..!!!");
   }
+  searchBook(event:any){
+    this.dataService.SendBookDetails(event.target.value)
+  }
 }

@@ -12,6 +12,12 @@
     font-family: 'Roboto';
     margin-top: 21px;
 }
+
+p {
+    margin-left: 23px;
+    font-size: small;
+}
+
 table,
 th,
 td {
@@ -22,47 +28,87 @@ td {
     width: 200px;
     height: 200px;
 }
-.tbl{
+
+.tbl {
     margin: 1px;
     margin-left: 229px;
-    margin-right: -210px;
+    margin-right: -218px;
 }
-.header{
+
+.header {
     margin-top: 1px;
     margin-left: 30px;
 }
+
 .page {
     margin-left: 299px;
 
 }
-.update{
+
+.update {
     margin-top: 16px;
 }
-.delete{
+
+.delete {
     margin-top: 16px;
 }
-.Addbook{
+
+.Addbook {
     margin: 1px;
 }
-.Addbook button{
+
+.Addbook button {
     margin: 1px;
 }
+
 .demo-button-container {
     padding-bottom: 16px;
     margin-left: 231px;
-  }
-  
-  .demo-button {
+}
+
+.demo-button {
+    background-color: #ec3c42;
+    border: none;
+    color: white;
     margin-left: -1px;
     height: 42px;
     width: 131px;
     font-size: 20px;
     font-family: monospace;
-  }
-  table {
-    counter-reset: tableCount;     
 }
-.counterCell:before {              
-    content: counter(tableCount); 
-    counter-increment: tableCount; 
+
+table {
+    counter-reset: tableCount;
+}
+
+.counterCell:before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
+}
+
+.update button {
+    background-color: #185abc;
+    border: none;
+    color: white;
+    padding: 9px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: list-item;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.Delete button {
+    background-color: #090e16;
+    border: none;
+    color: white;
+    padding: 9px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: list-item;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 14px;
 }

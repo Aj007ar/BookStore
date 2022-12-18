@@ -1,6 +1,6 @@
 <div class="main">
     <div class="books">
-        <p>Admin Books</p>
+        <h2>Admin Books</h2>
     </div>
     <div type="dropdown">
         <div class="sort">
@@ -15,8 +15,8 @@
         </div>
     </div>
 </div>
-<div class="demo-button-container"(click)="addDialog()">
-    <button mat-raised-button class="demo-button">
+<div class="demo-button-container">
+    <button mat-raised-button class="demo-button" (click)="addDialog()">
         Add Book
     </button>
 </div>
@@ -25,6 +25,7 @@
         <TR style="border: 1px solid #DCDCDC;background-color: gainsboro ">
             <TH COLSPAN="1 ">
                 <H3 style="text-align: center; ">Sr. No.</H3>
+                <p>({{recieveAdminBook.length}})</p>
             </TH>
             <TH COLSPAN="1 ">
                 <H3 style="text-align: center; ">Book</H3>
@@ -49,43 +50,34 @@
             </TH>
             <TH COLSPAN="1 ">
                 <H3 style="text-align: center; ">Update Book</H3>
-                <!-- <div class="Addbook">
-                    <button mat-icon-button matTooltip="Add New Books">
-                        <img src="../../../assets/AddImage.svg" alt="">
-                    </button>
-                </div> -->
             </TH>
             <TH COLSPAN="1 ">
                 <H3 style="text-align: center; ">Delete Book</H3>
             </TH>
         </TR>
 
-        <TR *ngFor="let Book of recieveAdminBook | paginate: {itemsPerPage: 8 , currentPage:page,totalItems:totalLength}">
-            <TH style="color: #333232;opacity: 0.71; " class="counterCell"></TH>
-            <TH style="color: #333232;opacity: 0.71; ">
+        <TR *ngFor="let Book of recieveAdminBook | filter : Search | paginate: {itemsPerPage: 8 , currentPage:page,totalItems:totalLength}">
+            <TH style="color: #333232;opacity: 0.81; " class="counterCell"></TH>
+            <TH style="color: #333232; ">
                 <div class="image">
                     <img src="../../../assets/image 36.png" alt="">
                 </div>
             </TH>
-            <TH style="color: #333232;opacity: 0.71; ">{{Book.bookName}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.author}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; text-overflow: ellipsis; word-wrap: break-word;">
+            <TH style="color: #333232;opacity: 0.81; ">{{Book.bookName}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.81; ">{{Book.author}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.81; text-overflow: ellipsis; word-wrap: break-word;">
                 {{Book.description}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.price}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.discountPrice}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">{{Book.quantity}}</TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; ">Update Details
+            <TH style="text-align: start;color: #333232;opacity: 0.81; ">{{Book.price}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.81; ">{{Book.discountPrice}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.81; ">{{Book.quantity}}</TH>
+            <TH style="text-align: start;color: #333232;opacity: 0.81; ">
                 <div class="update">
-                    <button mat-icon-button matTooltip="Update Details" (click)="updateDialog(Book)">
-                        <img src="../../../assets/edit.svg" alt="">
-                    </button>
+                    <button mat-raised-button color="primary" matTooltip="Update Details" (click)="updateDialog(Book)">Update</button>
                 </div>
             </TH>
-            <TH style="text-align: start;color: #333232;opacity: 0.71; "> Delete Book
-                <div class="delete">
-                    <button mat-icon-button matTooltip="Delete Book" (click)="deleteItem(Book._id)">
-                        <img src="../../../assets/delete (1).svg" alt="">
-                    </button>
+            <TH style="text-align: start;color: #333232;opacity: 0.81; ">
+                <div class="Delete">
+                    <button mat-raised-button color="primary" matTooltip="Delete Book" (click)="deleteItem(Book._id)">Delete</button>
                 </div>
             </TH>
         </TR>
